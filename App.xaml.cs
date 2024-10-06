@@ -1,8 +1,5 @@
 ﻿using Hyperv_Tools.Resources;
-using Hyperv_Tools.Views.Dialog;
-using MaterialDesignThemes.Wpf;
-using System.Configuration;
-using System.Data;
+using System.Globalization;
 using System.Security.Principal;
 using System.Windows;
 
@@ -12,7 +9,18 @@ namespace Hyperv_Tools
     {
         public App()
         {
+            AutoLanguage();
             ChechAdmin();
+        }
+
+        private void AutoLanguage()
+        {
+            string lang = Convert.ToString(Thread.CurrentThread.CurrentCulture.Name);
+            if (!lang.Equals("zh-CN"))
+            {
+                lang = "en-US";
+            }
+            LanguageManager.Instance.ChangeLanguage(new CultureInfo(lang));
         }
 
         private void ChechAdmin() {
