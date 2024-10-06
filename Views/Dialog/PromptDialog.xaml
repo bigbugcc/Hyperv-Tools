@@ -1,0 +1,45 @@
+﻿<UserControl
+    x:Class="Hyperv_Tools.Views.Dialog.PromptDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Hyperv_Tools.Views.Dialog"
+    xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    MaxWidth="300"
+    d:DesignHeight="200"
+    d:DesignWidth="300"
+    TabIndex="999"
+    mc:Ignorable="d">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Margin="0,3,0,10"
+            FontSize="12"
+            FontWeight="Black"
+            Text="{Binding Title}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Margin="0,6,0,0"
+            FontSize="12"
+            Text="{Binding Message}"
+            TextWrapping="Wrap" />
+
+        <Button
+            x:Name="Btn_Msg"
+            Grid.Row="2"
+            Margin="16,16,16,0"
+            HorizontalAlignment="Right"
+            Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+            Content="{Binding OkButton}"
+            IsDefault="True"
+            Style="{DynamicResource MaterialDesignFlatButton}" />
+    </Grid>
+</UserControl>
