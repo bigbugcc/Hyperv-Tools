@@ -1,5 +1,5 @@
 ﻿using DynamicData;
-using Hyperv_Tools.Entity;
+using Hyperv_Tools.Modeles;
 using Hyperv_Tools.Tools;
 using MaterialDesignThemes.Wpf;
 using System.Security.Principal;
